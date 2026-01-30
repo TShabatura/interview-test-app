@@ -53,3 +53,5 @@ If Allure CLI/plugin is available:
 - Delete semantics: should deleting an already-deleted/non-existing resource be idempotent returning 204, return 404, or something else?
 - Create-existing behavior: when creating a player with existing login/screenName, what is the expected response code and behavior (409/400/200)?
 - Password: should password be present in update/get responses — `PlayerUpdateTests` notes response doesn't return `password` property; confirm expected behavior for security and tests.
+- GET for player/create: should we use GET http method for player/create? Creating a user via GET violates HTTP semantics, can lead to caching issues and security risks.
+- POST for player/get: should we use POST http method for player/get? POST should not be used for simple data retrieval because it breaks HTTP semantics and caching
